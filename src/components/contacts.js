@@ -1,0 +1,30 @@
+import React from 'react';
+
+//enable the delete contact feature
+var Contact = React.createClass({
+  render: function() {
+    return(
+      <figure className="contact-row">
+        <div className="col-xs-1">
+          <i className="mdi mdi-account account2"></i>
+        </div>
+        <div className="col-xs-4">
+          <h5>
+            <b className="details">{this.props.contact.name}</b> 
+          </h5>
+        </div>
+        <div className="col-xs-4 hidden-xs">
+          <h5>
+             <b className="details">{this.props.contact.phone}</b> 
+          </h5>
+        </div>
+        <div className="col-xs-3 hidden-xs">
+          <i className="pull-right mdi mdi-delete account2" onClick={this.props.deleteContact.bind(null,this.props.i)} 
+            style={{marginLeft:20,backgroundColor:'crimson',cursor:'pointer'}}></i>
+        </div>
+      </figure>
+    );
+  }
+});
+
+export default Contact;
